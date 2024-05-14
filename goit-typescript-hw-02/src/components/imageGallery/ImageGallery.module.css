@@ -1,0 +1,9 @@
+.card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.cardItem {
+    width: calc((100% - 20px * 3) / 4);
+}
