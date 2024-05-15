@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import Modal from 'react-modal';
 
 const customStyles = {
@@ -14,7 +13,7 @@ const customStyles = {
 
 Modal.setAppElement('#root');
 
-interface ModalProps {
+type Props = {
   url: string;
   alt: string;
   description: string;
@@ -23,7 +22,7 @@ interface ModalProps {
   closeModal: () => void;
 }
 
-const ImageModal: FC<ModalProps> = ({ url, alt, modalIsOpen, closeModal, description, likes }) => {
+const ImageModal = ({ url, alt, modalIsOpen, closeModal, description, likes }: Props) => {
     return  (
       <div>
        <Modal
