@@ -8,9 +8,9 @@ import LoadMoreBtn from "./components/loadMoreBtn/LoadMoreBtn";
 import ImageModal from "./components/imageModal/ImageModal";
 import "./App.css";
 
-interface Image {
-  id: number | string;
-  urls: { regular: string };
+export interface Image {
+  id: string;
+  urls: { small: string; regular: string };
   alt_description: string;
   description: string;
   likes: number;
@@ -60,7 +60,7 @@ function App() {
     setIsVisible(false);
   };
 
-  const onLoadMore = () => {
+  const onLoadMore = (): void => {
     setPage((prevPage) => prevPage + 1);
   };
 
@@ -72,7 +72,7 @@ function App() {
     setLikes(obj.likes);
   };
 
-  const closeModal = () => {
+  const closeModal = (): void => {
     setShowModal(false);
     setUrl("");
     setAlt("");

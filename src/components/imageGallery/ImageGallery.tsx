@@ -1,7 +1,14 @@
 import ImageCard from "../imageCard/ImageCard";
 import css from "./ImageGallery.module.css";
+import { Image } from "../../App";
+import { FC } from "react";
 
-const ImageGallery = ({ images, openModal }) => {
+interface GalleryProps {
+  images: Image[];
+  openModal: (image: Image) => void;
+}
+
+const ImageGallery: FC<GalleryProps> = ({ images, openModal }) => {
     return (
           <ul className={css.card}>
             {images.map((image) => {
