@@ -16,6 +16,11 @@ export interface Image {
   likes: number;
 }
 
+interface Results {
+  results: Image[];
+  total_pages: number;
+}
+
 function App() {
   const [query, setQuery] = useState<string>("");
   const [page, setPage] = useState<number>(1);
@@ -35,7 +40,7 @@ function App() {
     const fetchData = async () => {
       setIsLoading(true);
       try {
-        const { results, total_pages } = await getImages(query, page);
+        const { results, total_pages }: Results = await getImages(query, page);
         if (!results.length) {
           setIsEmpty(true);
           return;
